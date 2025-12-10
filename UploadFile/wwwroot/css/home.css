@@ -1,0 +1,196 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    font-family: 'Inter', system-ui, sans-serif;
+    background: #f8f9fa;
+}
+
+.btn,
+.btn-home-new,
+.upload-form .buttons .btn,
+.upload-form .buttons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    min-height: 64px;
+    padding: 18px 52px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    line-height: 1;
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    text-decoration: none;
+    cursor: pointer;
+    box-shadow: 0 10px 30px rgba(52, 152, 219, 0.35);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    white-space: nowrap;
+}
+
+    .btn:hover,
+    .btn-home-new:hover,
+    .upload-form .buttons .btn:hover,
+    .upload-form .buttons a:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 16px 40px rgba(52, 152, 219, 0.45);
+    }
+
+    .btn::before,
+    .btn-home-new::before,
+    .upload-form .buttons .btn::before,
+    .upload-form .buttons a::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(90deg, transparent, rgba(255,255,255,.3), transparent);
+        transform: translateX(-100%);
+        transition: transform 0.7s;
+    }
+
+    .btn:hover::before,
+    .btn-home-new:hover::before,
+    .upload-form .buttons .btn:hover::before,
+    .upload-form .buttons a:hover::before {
+        transform: translateX(100%);
+    }
+
+@media (max-width: 640px) {
+    .btn,
+    .btn-home-new,
+    .upload-form .buttons .btn,
+    .upload-form .buttons a {
+        width: 100%;
+        padding: 18px 24px;
+    }
+}
+
+.upload-form {
+    background: white;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    margin-bottom: 60px;
+    backdrop-filter: blur(10px);
+}
+
+.file-input {
+    display: block;
+    width: 100%;
+    padding: 16px;
+    font-size: 1.1rem;
+    border: 2px dashed #3498db;
+    border-radius: 12px;
+    background: #f8fdff;
+    margin-bottom: 24px;
+    transition: all 0.4s ease;
+    cursor: pointer;
+}
+
+    .file-input:hover,
+    .file-input:focus {
+        border-color: #2980b9;
+        background: #e8f5ff;
+        box-shadow: 0 0 0 6px rgba(52, 152, 219, 0.15);
+        outline: none;
+    }
+
+.no-files-message {
+    color: #95a5a6;
+    font-style: italic;
+    font-size: 1.4rem;
+    text-align: center;
+    margin: 80px 0;
+    opacity: 0.8;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+    margin-top: 50px;
+    padding: 10px 0;
+}
+
+@media (max-width: 1400px) {
+    .gallery {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 992px) {
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .gallery {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .upload-form {
+        padding: 24px;
+        margin: 20px 12px;
+        border-radius: 14px;
+    }
+}
+
+.gallery-item {
+    background: white;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    aspect-ratio: 4 / 3;
+}
+
+    .gallery-item:hover {
+        transform: translateY(-16px) scale(1.02);
+        box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
+        z-index: 10;
+    }
+
+.gallery-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s ease;
+}
+
+.gallery-item:hover .gallery-image {
+    transform: scale(1.08);
+}
+
+.upload-form .buttons {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 20px;
+}
+
+@media (max-width: 480px) {
+    .upload-form .buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+        .upload-form .buttons .btn,
+        .upload-form .buttons a {
+            width: 100%;
+        }
+}

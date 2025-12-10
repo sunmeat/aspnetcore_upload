@@ -1,0 +1,129 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
+}
+
+html, body {
+    height: 100%;
+    font-family: 'Inter',system-ui,sans-serif;
+    background: #f8f9fa
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px
+}
+
+.particles {
+    display: none
+}
+
+.container {
+    background: #fff;
+    border-radius: 16px;
+    padding: 80px 90px;
+    max-width: 860px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 10px 40px rgba(0,0,0,.08);
+    border: 1px solid rgba(0,0,0,.04)
+}
+
+.error-code {
+    font-size: 13rem;
+    font-weight: 800;
+    line-height: 1;
+    background: linear-gradient(135deg,#3498db,#8e44ad);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 12px
+}
+
+h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin: 16px 0 20px
+}
+
+p {
+    font-size: 1.2rem;
+    color: #636e72;
+    line-height: 1.7;
+    margin-bottom: 48px
+}
+
+.btn-home {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    background: linear-gradient(135deg,#3498db,#2980b9);
+    color: #fff;
+    padding: 18px 52px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    border-radius: 12px;
+    text-decoration: none;
+    box-shadow: 0 10px 30px rgba(52,152,219,.35);
+    transition: transform .3s,box-shadow .3s;
+    position: relative;
+    overflow: hidden
+}
+
+    .btn-home:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 16px 40px rgba(52,152,219,.45)
+    }
+
+    .btn-home::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(90deg,transparent,rgba(255,255,255,.3),transparent);
+        transform: translateX(-100%);
+        transition: transform .7s
+    }
+
+    .btn-home:hover::before {
+        transform: translateX(100%)
+    }
+
+    .btn-home svg {
+        width: 26px;
+        height: 26px;
+        transition: transform .3s
+    }
+
+    .btn-home:hover svg {
+        transform: translateX(6px)
+    }
+
+@media(max-width:640px) {
+    .container {
+        padding: 60px 30px
+    }
+
+    .error-code {
+        font-size: 9rem
+    }
+
+    h2 {
+        font-size: 2.1rem
+    }
+
+    p {
+        font-size: 1.1rem
+    }
+
+    .btn-home {
+        width: 100%;
+        justify-content: center;
+        padding: 18px
+    }
+}

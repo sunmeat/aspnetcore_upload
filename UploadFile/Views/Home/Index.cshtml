@@ -1,0 +1,58 @@
+﻿@model IEnumerable<UploadFile.Models.FileModel>
+@{
+    ViewData["Title"] = "Завантаження файлів";
+    <!-- Layout = null; - вимкнути master page, але тоді треба підключити додаткові загальні стилі -->
+}
+
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        @TempData["Error"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
+}
+
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        @TempData["Success"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
+}
+
+<h3>Виберіть один або декілька файлів для завантаження:</h3>
+
+<div class="upload-form">
+    <form asp-action="AddFile" asp-controller="Home" method="post" enctype="multipart/form-data">
+        <input type="file"
+               name="uploadedFiles"
+               class="file-input"
+               multiple />
+        <div class="buttons">
+            <button type="submit" class="btn">Завантажити всі вибрані файли</button>
+            <a asp-action="Generate404" class="btn btn-warning">Згенерувати 404</a>
+        </div>
+    </form>
+</div>
+
+<h3>Усі завантажені файли (@Model.Count())</h3>
+
+@if (!Model.Any())
+{
+    <p class="no-files-message">Поки що файлів немає. Завантажте щось!</p>
+}
+else
+{
+    <div class="gallery">
+        @foreach (var f in Model)
+        {
+            <div class="gallery-item">
+                <img src="@f.Path" alt="@f.Name" class="gallery-image" />
+            </div>
+        }
+    </div>
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/home.css" />
+}

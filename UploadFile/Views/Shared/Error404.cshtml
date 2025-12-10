@@ -1,0 +1,33 @@
+﻿@{
+    ViewData["Title"] = "Сторінку не знайдено — 404";
+    Layout = null; // вимикаємо майстер-сторінку
+}
+
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/css/error404.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+</head>
+<body>
+
+    <div class="container">
+        <div class="error-code">404</div>
+        <h2>Отакої! Сторінки нема.</h2>
+        <p>
+            Схоже, посилання застаріло або сторінку було видалено.<br>
+            Але не хвилюйся — головна поки що на місці :)
+        </p>
+
+        <a asp-controller="Home" asp-action="Index" class="btn-home">
+            <span>На головну</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M13 5l7 7-7 7" />
+            </svg>
+        </a>
+    </div>
+</body>
+</html>
