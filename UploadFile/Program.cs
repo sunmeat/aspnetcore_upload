@@ -1,5 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using UploadFile.Models;
+// dotnet add package Microsoft.EntityFrameworkCore !!! встановлюємо пакети, інакше код не працюватиме, View > Terminal (або NuGet)
+// dotnet add package Microsoft.EntityFrameworkCore.SqlServer !!!
 
 namespace UploadFile
 {
